@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-ROOT_URLCONF = 'shyamconstruction.urls'
+ROOT_URLCONF = 'shayamconstrudtion.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'shyamconstruction.wsgi.application'
+WSGI_APPLICATION = 'shayamconstrudtion.wsgi.application'
 
 
 # Database
