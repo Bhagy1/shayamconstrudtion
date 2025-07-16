@@ -1,1 +1,1 @@
-web: gunicorn shayamconstrudtion.wsgi
+web: gunicorn shyamconstruction.wsgi
