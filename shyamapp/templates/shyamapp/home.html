@@ -1,0 +1,384 @@
+{% extends 'shyamapp/base.html' %}
+{% load static %}
+
+{% block title %}Home | Shri Shyam Baba Design & Construction{% endblock %}
+
+{% block content %}
+<style>
+  .fixed-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card {
+    border-radius: 12px;
+    background-color: #f8f9fa;
+  }
+
+  .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #80bdff;
+  }
+
+  .btn:hover {
+    background-color: #1ebe5d !important;
+  }
+
+  h2,
+  h3,
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 25px;
+  }
+
+  section {
+    width: 100%;
+    padding: 60px 0;
+  }
+
+  nav.navbar {
+    margin-top: 0 !important;
+    height: 90px
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .background-slideshow {
+    background-size: cover;
+    background-position: center;
+    animation: slideShow 15s infinite;
+    /* Adjust height as needed */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+  min-height: 100vh;
+  flex-direction: column;
+  
+  }
+  @keyframes slideShow {
+    0% {
+      background-image: url("{% static 'shyamapp/images/bg1.jpg' %}");
+    }
+
+    33% {
+      background-image: url("{% static 'shyamapp/images/bg2.jpg' %}");
+    }
+
+    66% {
+      background-image: url("{% static 'shyamapp/images/bg3.jpg' %}");
+    }
+
+    100% {
+      background-image: url("{% static 'shyamapp/images/bg1.jpg' %}");
+    }
+  }
+
+  .text-center #lead {
+    font-weight: bold;
+  }
+
+
+  .background-slideshow h2,
+  .background-slideshow p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+  }
+  .service-img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .service-img {
+  transform: scale(1.08);
+}
+#animated-heading {
+  font-size: 2.8rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+
+
+</style>
+<div class="container-fluid py-4">
+  <h1 id="animated-heading" class="text-center mt-4"
+    style="font-family: 'Montserrat', sans-serif; font-size: 3.2rem; color: rgb(18, 66, 139); letter-spacing: 0.5px; text-align: center;">
+  </h1>
+</div>
+
+
+<!-- About us -->
+<section class="background-slideshow container-fluid" id="about">
+  <div class="row justify-content-center">
+    <h2 class="mb-3" style="color:rgb(255, 153, 0);" >About Us</h2>
+    <p style="font-size: 1.3rem;">
+  At Shri Shyam Baba Design & Construction, we are a dedicated team of professionals passionate about building dreams into reality. Specializing in both residential and commercial projects, we provide end-to-end solutions—from innovative architectural planning to elegant interior design and vastu-compliant construction. <br><br>
+  With a deep understanding of modern aesthetics and traditional principles, we aim to create structures that are not just visually appealing, but also durable, functional, and spiritually aligned. Whether it's a home, villa, office, or commercial space, our goal is to deliver excellence in every brick laid and every design drawn. <br><br>
+  Trust, transparency, and timely delivery are the foundations of our work. Partner with us to transform your vision into a timeless living or working space that truly reflects your style and values.
+</p>
+
+  </div>
+</section>
+
+<!-- Our Services -->
+<section class="container-fluid py-5" id="services">
+  <h2 class="text-center mb-4" style="color: rgb(18, 66, 139);">Our <span style="color: rgb(255, 153, 0);">Services</h2>
+  <div class="row">
+
+   <div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services1.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title" id="architecture" style="color: rgb(18, 66, 139);"><span style="color: rgb(255, 153, 0);">Architectural</span> Planning with Vastu Consultation</h5>
+      <p class="card-text flex-grow-1">We offer end-to-end architectural design services for homes and offices.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services2.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column"> 
+      <h5 class="card-title" id="residential" style="color: rgb(18, 66, 139);"><span style="color: rgb(255, 153, 0);">Residential </span>& <span style="color: rgb(255, 153, 0);">Commercial</span> Construction</h5>
+        <p class="card-text">Custom elevation design for modern, traditional, and duplex homes , villas.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services3.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column"> 
+      <h5 class="card-title" id="interior" style="color: rgb(18, 66, 139);"><span style="color: rgb(255, 153, 0);">Interior</span> Design </h5>
+          <p class="card-text flex-grow-1">Elegant and budget-friendly interiors tailored to your taste.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services4.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column"> 
+      <h5 class="card-title" id="vastu" style="color: rgb(18, 66, 139);"> <span style="color: rgb(255, 153, 0);">Vastu</span> consultation</h5>
+          <p class="card-text flex-grow-1">Integrating Vastu Shastra with modern architecture to bring balance and positivity to your home.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+   
+    
+<div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services5.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column"> 
+      <h5 class="card-title" id="2d" style="color: rgb(18, 66, 139);"><span style="color: rgb(255, 153, 0);">2D/3D</span> Front Elevation</h5>
+          <p class="card-text flex-grow-1">Get custom front elevation for modern and duplex homes.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 mb-4 d-flex">
+  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
+    <div class="overflow-hidden">
+      <img src="{% static 'shyamapp/images/services6.jpg' %}" 
+           class="card-img-top service-img" 
+           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
+           alt="Service 1" 
+           onclick="openImageModal(this.src)">
+    </div>
+    <div class="card-body d-flex flex-column"> 
+       <h5 class="card-title" id="estimate" style="color: rgb(18, 66, 139);"> <span style="color: rgb(255, 153, 0);">Estimate </span>& Costing</h5>
+          <p class="card-text flex-grow-1">Get accurate material and labor estimates for your project.</p>
+      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
+    </div>
+  </div>
+</div>
+
+
+  
+    
+</section>
+<section class="container my-5" id="gallery" style="background-color: #eee0ca;">
+  <h2 class="text-center mb-4" style="color: rgb(18, 66, 139);">Explore Our <span style="color: rgb(255, 153, 0);">Work</h2>
+  <div class="row">
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <img src="{% static 'shyamapp/images/work1.jpg' %}" class="card-img-top img-fluid fixed-image" alt="Work 1"
+          onclick="openImageModal(this.src)">
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <img src="{% static 'shyamapp/images/work2.jpg' %}" class="card-img-top img-fluid fixed-image" alt="Work 1"
+          onclick="openImageModal(this.src)">
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <img src="{% static 'shyamapp/images/work32.jpg' %}" class="card-img-top img-fluid fixed-image" alt="Work 1"
+          onclick="openImageModal(this.src)">
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <img src="{% static 'shyamapp/images/work4.jpg' %}" class="card-img-top img-fluid fixed-image" alt="Work 1"
+          onclick="openImageModal(this.src)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container my-5" id="contact" style="background-color: #e5f0ef;">
+  <div class="card p-4 shadow-sm"
+    style="max-width: 600px; margin: auto; border-radius: 15px; background-color: white;">
+    <div>
+      <h2 class="text-center mb-4" style="color: rgb(18, 66, 139);">Contact <span style="color: rgb(255, 153, 0);">Us</h2>
+    </div>
+
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Your Name" required class="form-control mb-3"
+        style="border-color: #ced4da" ;>
+      <input type="tel" id="phone" placeholder="Phone Number" required class="form-control mb-3"
+        style="border-color: #ced4da;">
+      <textarea id="message" placeholder="Your Message" required class="form-control mb-3" rows="4"
+        style="border-color: #ced4da;"></textarea>
+        <div class="d-flex justify-content-between">
+    <button type="button" onclick="sendToWhatsApp()" class="btn me-2 w-50" style="background-color: #285c3b; color: white;">
+      WhatsApp
+    </button>
+    <a href="tel:+919424564997" class="btn w-50" style="background-color: #0c6dbd; color: white;">
+  Call Us
+</a>
+  </div>
+    </form>
+  </div>
+</section>
+<section id="reviews" class="container my-5">
+  <h2 class="text-center mb-4" style="color: rgb(18, 66, 139);">Customer <span style="color: rgb(255, 153, 0);">Reviews</span></h2>
+  <div class="row">
+    <!-- Review Form -->
+    <div class="col-md-4">
+      <div class="card p-3 shadow-sm">
+        <h5 class="text-center mb-3">Write a Review</h5>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scrolling Review List -->
+    <div class="col-md-8">
+      <div class="card shadow-sm p-3" style="max-height: 350px; overflow-y: auto;">
+        {% for review in reviews %}
+          <div class="border-bottom pb-2 mb-2">
+            <strong>{{ review.name }}</strong> 
+            <span class="text-warning">{% for _ in "12345"|slice:":review.rating" %}★{% endfor %}</span>
+            <p class="mb-0">{{ review.review }}</p>
+            <small class="text-muted">{{ review.created_at|date:"d M Y H:i" }}</small>
+          </div>
+        {% empty %}
+          <p>No reviews yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<p class="lead text-center mt-4 fw-bold" style="font-size: 1.25rem; color: rgb(255, 153, 0);" >We build homes with heart and design with purpose.
+</p>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <img src="" id="modalImage" class="img-fluid w-100" alt="Popup Image">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✨ JavaScript to handle image click -->
+<script>
+  function openImageModal(imgSrc) {
+    document.getElementById("modalImage").src = imgSrc;
+    new bootstrap.Modal(document.getElementById("imageModal")).show();
+  }
+
+  const text = "Welcome to Shri Shayam Baba Design & Construction";
+  const words = text.split(" ");
+  const heading = document.getElementById("animated-heading");
+  let i = 0;
+
+  function showNextWord() {
+    if (i < words.length) {
+      heading.innerHTML += words[i] + " ";
+      i++;
+      setTimeout(showNextWord, 300); // Adjust speed here (300ms per word)
+    }
+  }
+
+  window.onload = showNextWord;
+</script>
+
+{% endblock %}
