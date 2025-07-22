@@ -37,18 +37,20 @@
       transition: color 0.3s ease;
     }
 
-    .navbar .fa-instagram:hover,
-    .navbar .fa-envelope:hover,
-    .navbar .fa-linkedin:hover {
-      color: #ffd700;
-      /* highlight on hover */
-    }
+    /* === Navbar Social Icons Hover === */
+.navbar .fa-instagram:hover,
+.navbar .fa-envelope:hover,
+.navbar .fa-linkedin:hover {
+  color: #ffd700; /* Gold on hover */
+}
 
-    .custom-navbar {
-      background-color: rgb(25, 55, 110)
-        /* Change this color */
-    }
-    @media (max-width: 767px) {
+/* === Navbar Background === */
+.custom-navbar {
+  background-color: rgb(25, 55, 110); /* Deep blue */
+}
+
+/* === Mobile Styles (for screens <= 767px) === */
+@media (max-width: 767px) {
   .navbar-nav .nav-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -64,17 +66,27 @@
   }
 
   .dropdown-menu {
-    background-color: #f8f9fa;
+    background-color: rgba(0, 0, 0, 0.95); /* Dark background for dropdown in mobile */
+    border: none;
   }
 
   .dropdown-menu .dropdown-item {
-    color: #000;
+    color: white;
   }
 
   .dropdown-menu .dropdown-item:hover {
-    background-color: #e2e6ea;
+    background-color: rgba(255, 153, 0, 0.2);
+    color: white;
   }
 }
+
+/* === Collapsed Menu (mobile hamburger open state) === */
+.navbar-collapse {
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent dark */
+  border-radius: 10px;
+  padding: 10px;
+}
+
 
   </style>
 </head>
