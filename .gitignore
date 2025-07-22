@@ -11,9 +11,6 @@ venv/
 # Ignore environment variables
 .env
 
-# Ignore collected static files
-/staticfiles/
-
 # Ignore IDE-specific files
 .vscode/
 .idea/
