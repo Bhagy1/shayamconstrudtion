@@ -117,6 +117,40 @@
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
 }
+.about-section {
+  background-image: url("{% static 'Images/about_bg.jpg' %}"); /* Adjust the path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* ✅ Responsive styling for mobile screens */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
 
 
 
@@ -129,17 +163,18 @@
 
 
 <!-- About us -->
-<section class="background-slideshow container-fluid" id="about">
-  <div class="row justify-content-center">
-    <h2 class="mb-3" style="color:rgb(255, 153, 0);" >About Us</h2>
-    <p style="font-size: 1.3rem;">
-  At Shri Shyam Baba Design & Construction, we are a dedicated team of professionals passionate about building dreams into reality. Specializing in both residential and commercial projects, we provide end-to-end solutions—from innovative architectural planning to elegant interior design and vastu-compliant construction. <br><br>
-  With a deep understanding of modern aesthetics and traditional principles, we aim to create structures that are not just visually appealing, but also durable, functional, and spiritually aligned. Whether it's a home, villa, office, or commercial space, our goal is to deliver excellence in every brick laid and every design drawn. <br><br>
-  Trust, transparency, and timely delivery are the foundations of our work. Partner with us to transform your vision into a timeless living or working space that truly reflects your style and values.
-</p>
-
+<section class="about-section container-fluid" id="about">
+  <div class="row justify-content-center text-center px-4 py-5">
+    <div class="col-lg-10">
+      <h2 class="mb-4 text-warning">About Us</h2>
+      <p class="about-text">
+        At Shri Shyam Baba Design & Construction, we are a dedicated team of professionals passionate about building dreams into reality.
+        Specializing in both residential and commercial projects, we provide end-to-end solutions—from innovative architectural planning to elegant interior design and vastu-compliant construction.
+        
+    </div>
   </div>
 </section>
+
 
 <!-- Our Services -->
 <section class="container-fluid py-5" id="services">
@@ -216,24 +251,6 @@
   </div>
 </div>
    
-    
-<div class="col-md-4 mb-4 d-flex">
-  <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
-    <div class="overflow-hidden">
-      <img src="{% static 'Images/services/service5_s.jpg' %}" 
-           class="card-img-top service-img" 
-           style="height: 200px; object-fit: cover; transition: transform 0.5s;" 
-           alt="Service 1" 
-           onclick="openImageModal(this.src)">
-    </div>
-    <div class="card-body d-flex flex-column"> 
-      <h5 class="card-title" id="2d" style="color: rgb(18, 66, 139);"><span style="color: rgb(255, 153, 0);">2D/3D</span> Front Elevation</h5>
-          <p class="card-text flex-grow-1">Get custom front elevation for modern and duplex homes.</p>
-      <a href="#contact" class="btn btn-outline-primary mt-3">Know More</a>
-    </div>
-  </div>
-</div>
-
 
 <div class="col-md-4 mb-4 d-flex">
   <div class="card shadow-sm h-100 w-100 border border-secondary" style="transition: transform 0.3s, box-shadow 0.3s;">
